@@ -57,8 +57,7 @@ RUN mkdir -p /root/.config/.wrangler && \
 
 RUN pnpm run build
 
-# For Railway/production, we need to serve the built files without dev server checks
-CMD [ "npx", "serve", "./build/client", "-l", "5173", "-s", "-n"]
+CMD [ "pnpm", "run", "dockerstart"]
 
 # Development image
 FROM base AS bolt-ai-development
